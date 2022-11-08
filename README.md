@@ -31,6 +31,7 @@ There are two different configuration/submission flavors depending on personal p
     - disadvanatges:
         - an error is triggered if a job with a dependency gets submitted, but the dependency has already finished
         - to find failed jobs one has to investigate many .err files and/or look at the remaining/unfinished jobs in a new Snakemake DAG
+    - open question: behaviour of ```--retries``` flag unknown. If someone finds out, please let me know.
 - Conductor job (for details see snakejob_conductor.sh)
     - one job (on longq) to rule them all: use a sbatch job script to call and manage (conduct) the execution of all workflow jobs
     - set ```immediate-submit: false``` in config.yaml
@@ -47,7 +48,3 @@ If you want to use a conductor job for the submission and execution of a worklfo
 2. go through every line and adapt it according to your setup (e.g., set paths to the log folder and use absolute paths)
 3. use ```sbatch snakejob_conductor.sh``` to submit the conductor job
 4. watch the queue and/or check the .out/.err files for progress
-
-# Open questions
-
-- behaviour of ```--retries``` flag unknown in both flavors. If someone finds out, please let me know.
