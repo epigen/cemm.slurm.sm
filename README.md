@@ -10,7 +10,7 @@ Snakemake SLURM cluster profile for the HPC at [CeMM](https://cemm.at/) based on
 # Usage
 There are two options for the use of this cluster profile with any snakemake workflow.
 
--  (recommended) Set environmental variable (e.g., put in bash.rc **once**) 
+-  (recommended) Set environmental variable (e.g., put in bashrc **once**) 
 ```
 export SNAKEMAKE_PROFILE=<path/to/this/repo>
 ```
