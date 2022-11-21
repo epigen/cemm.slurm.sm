@@ -10,7 +10,7 @@ Snakemake SLURM cluster profile for the HPC at [CeMM](https://cemm.at/) based on
 # Usage
 There are two options for the use of this cluster profile with any snakemake workflow.
 
--  (recommended) Set environmental variable (e.g., put in bash.rc **once**) 
+-  (recommended) Set environmental variable (e.g., put in bashrc **once**) 
 ```
 export SNAKEMAKE_PROFILE=<path/to/this/repo>
 ```
@@ -42,7 +42,7 @@ There are two different configuration/submission flavors depending on personal p
         - if the conductor job is canceled the workflow directory might be "locked" → use ```snakemake --unlock```
         - incomplete files (i.e., files that started to be created, but not finished) might persist → delete the content of this folder ```rm -rf <path/to/workflow>/.snakemake/incomplete/*```
 
-# Snakejob Conductor
+# Snakejob Conductor (recommended for powerusers)
 If you want to use a conductor job for the submission and execution of a worklfow follow these steps:
 1. copy ```snakejob_conductor.sh``` to the workflow/project root directory
 2. go through every line and adapt it according to your setup (e.g., set paths to the log folder and use absolute paths)
