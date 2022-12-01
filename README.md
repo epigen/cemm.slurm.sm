@@ -31,6 +31,7 @@ There are two different configuration/submission flavors depending on personal p
     - disadvanatges:
         - an error is triggered if a job with a dependency gets submitted, but the dependency has already finished
         - to find failed jobs one has to investigate many .err files and/or look at the remaining/unfinished jobs in a new Snakemake DAG
+        - if you submit a lot of jobs (e.g., >500) this might take some time (i.e., 1s/job) until all jobs are submitted
     - open question: behaviour of ```--retries``` flag unknown. If someone finds out, please let me know.
 - Conductor job (for details see snakejob_conductor.sh)
     - one job (on longq) to rule them all: use a sbatch job script to call and manage (conduct) the execution of all workflow jobs
