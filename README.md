@@ -20,7 +20,6 @@ export SNAKEMAKE_PROFILE=<path/to/this/repo>
 snakemake --profile <path/to/this/repo>
 ```
 
-
 # Configuration
 There are two different configuration/submission flavors depending on personal preference and if the workflow has many jobs to be submitted (hundreds) with "small ones" in the beginning
 - immediate-submit
@@ -51,6 +50,9 @@ If you want to use a conductor job for the submission and execution of a worklfo
 3. use ```sbatch snakejob_conductor.sh``` to submit the conductor job
 4. watch the queue and/or check the .out/.err files for progress
 
+# Logs
+- stderr files contain all Snakemake-related logs and error messages passed from e.g., executed scripts.
+- stdout files contain all output from the executed steps e.g., print within scripts.
 
 # MedUni HPC cluster
 
