@@ -2,7 +2,7 @@ jobs: 5000
 use-conda: true
 immediate-submit: false
 notemp: true
-restart-times: 5
+restart-times: 0
 jobscript: "slurm-jobscript.sh"
 cluster: "/research/home/sreichl/projects/cemm.slurm.sm/slurm-submit.py {dependencies}"
 cluster-status: "slurm-status.py"

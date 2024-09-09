@@ -27,7 +27,7 @@ echo $SLURM_CPUS_ON_NODE
 echo "======================"
 
 # *** setup environment ***
-# soruce conda and activate your Snakemake environment
+# source conda and activate your Snakemake environment
 source <path/to/conda>/miniconda3/etc/profile.d/conda.sh
 conda activate <snakemake_environment_name>
 
