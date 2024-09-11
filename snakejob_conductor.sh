@@ -36,7 +36,12 @@ cd <path/to/workflow>
 
 # *** start the workflow ***
 date
-snakemake -p --use-conda
+snakemake
+
+# use this flag if you only want to trigger reruns based on modification dates
+#--rerun-triggers mtime
+
+# for generating a report after successful workflow execution
 # snakemake --report <path/to/report.html/zip>
 date
 
