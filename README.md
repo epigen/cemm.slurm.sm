@@ -2,7 +2,7 @@
 This is a [global Snakemake profile](https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles) for [CeMM's](https://cemm.at/) SLURM HPC, using the [slurm-executor-plugin](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html). Global Snakemake profiles are the interface between Snakemake workflows and the workload manager of your cluster (here: SLURM).
 
 # ⚙️ Setup (one-off)
-1. Install the [slurm-executor-plugin](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html#installation) inside of your existing Snakemake conda environment.
+1. Install the [slurm-executor-plugin](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html#installation)(tested with `v0.10.0`) inside of your existing Snakemake conda environment.
     ```shell
     conda activate snakemake
     conda install snakemake-executor-plugin-slurm
