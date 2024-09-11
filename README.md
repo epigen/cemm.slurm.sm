@@ -1,7 +1,7 @@
 # Snakemake 8 profile for CeMM's HPC
 This is a [global Snakemake profile](https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles) for [CeMM's](https://cemm.at/) SLURM HPC, using the [slurm-executor-plugin](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html). Global Snakemake profiles are the interface between Snakemake workflows and the workload manager of your cluster (here: SLURM).
 
-# Setup (one-off)
+# ⚙️ Setup (one-off)
 1. Install the [slurm-executor-plugin](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html#installation) inside of your existing Snakemake conda environment.
     ```shell
     conda activate snakemake
@@ -22,7 +22,7 @@ This is a [global Snakemake profile](https://snakemake.readthedocs.io/en/stable/
     snakemake --profile <path/to/this/repo/cemm.slurm.sm>
     ```
 
-# Usage
+# 🛠️ Usage
 There are three different flavors depending on personal preference and if the workflow has many jobs to be submitted (hundreds) with "small ones" in the beginning.
 - Interactive
     - Start snakemake on your head/login node (recommended by Snakemake developers).
@@ -51,14 +51,14 @@ There are three different flavors depending on personal preference and if the wo
     - Open question: behaviour of ```--retries``` flag unknown. If someone finds out, please let me know.
 
 
-# Snakejob Conductor (recommended)
+# 🐍 Snakejob Conductor (recommended)
 If you want to use a conductor job for the submission and execution of your worklfow follow these steps:
 1. Copy ```snakejob_conductor.sh``` to the workflow/project root directory.
 2. Go through every line and adapt it according to your setup (e.g., set paths to the log folder and use absolute paths).
 3. Use ```sbatch snakejob_conductor.sh``` to submit the conductor job.
 4. Watch the queue and/or check the .out/.err files for progress.
 
-# Job Information
+# ℹ️ Job Information
 The SLURM job's comments contain the `rule` and `wildcard` information and can be accessed using `%.50k` in `squeue`:
 ```
 squeue -u $USER -o %i,%P,%.50j,%.50k
@@ -69,7 +69,7 @@ You can also create an `alias` for checking on all your jobs in a structured man
 alias mq="squeue -u sreichl -o '%.22i %.9P %.50j %.50k %.8u %.2t %.10M %.4C %.9m %.6D %R'"
 ```
 
-# Job Logs
+# 🗒️ Job Logs
 Snakemake will print the following upon SLURM job submissions, pointing to the respective SLURM job log files containing standard output:
 ```
 Job {XX} has been submitted with SLURM jobid {jobid} (log: /path/to/workflow/.snakemake/slurm_logs/rule_{rulename}/{wildcards}/{jobid}.log).
