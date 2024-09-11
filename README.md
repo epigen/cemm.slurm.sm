@@ -30,7 +30,7 @@ There are three different flavors depending on personal preference and if the wo
 - Conductor job (recommended)
     - One job (on longq) to rule them all: use a sbatch job script to call and manage (conduct) the execution of all workflow jobs.
     - Set ```immediate-submit: false``` in [config.v8+.yaml](./config.v8+.yaml).
-    - For details see [snakejob_conductor.sh](./snakejob_conductor.sh).
+    - For details see next section and [snakejob_conductor.sh](./snakejob_conductor.sh).
     - Advantages
         - Snakemake orchestrates the job submission.
         - One place to check progress, log errors/failed jobs, and document performance (e.g., duration).
@@ -51,7 +51,7 @@ There are three different flavors depending on personal preference and if the wo
     - Open question: behaviour of ```--retries``` flag unknown. If someone finds out, please let me know.
 
 
-# 🐍 Snakejob Conductor (recommended)
+# 🐍 Snakejob Conductor
 If you want to use a conductor job for the submission and execution of your worklfow follow these steps:
 1. Copy ```snakejob_conductor.sh``` to the workflow/project root directory.
 2. Go through every line and adapt it according to your setup (e.g., set paths to the log folder and use absolute paths).
