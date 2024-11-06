@@ -1,6 +1,10 @@
 # Snakemake 8 profile for CeMM's HPC
 This is a [global Snakemake profile](https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles) for [CeMM's](https://cemm.at/) SLURM HPC, using the [slurm-executor-plugin](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html). Global Snakemake profiles are the interface between Snakemake workflows and the workload manager of your cluster (here: SLURM).
 
+> [!NOTE]  
+> This profile pairs well with workflows from [MrBiomics](https://github.com/epigen/MrBiomics), an effort to augment research by modularizing (biomedical) data science. For more details, instructions, and modules check out the project's repository.
+
+
 # ⚙️ Setup (one-off)
 1. Install the [slurm-executor-plugin](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html#installation)(tested with `v0.10.0`) inside of your existing Snakemake conda environment.
     ```shell
