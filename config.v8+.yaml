@@ -2,13 +2,13 @@
 # sane defaults for CLI arguments 
 executor: slurm
 jobs: 5000
+cores: 100
 software-deployment-method: conda
 immediate-submit: false
 notemp: true
 restart-times: 0
 max-jobs-per-second: 10
 max-status-checks-per-second: 10
-local-cores: 1
 latency-wait: 120
 keep-going: true
 rerun-incomplete: true
