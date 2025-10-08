@@ -62,6 +62,12 @@ If you want to use a conductor job for the submission and execution of your work
 3. Use ```sbatch snakejob_conductor.sh``` to submit the conductor job.
 4. Watch the queue and/or check the .out/.err files for progress. A useful script to parse conductor-generated logfiles is `parse_errors.py`. This script counts the types of errors & sorts the file paths by them in an easily copy-pasteable way (optimized for snakemake v9). It works if your logging directories always have the same structure, e.g., you save them in `~/projects/*/results/logs/snake_sbatch/*conductor*.out`
 
+> [!TIP]
+> You can find and show the errors in an easily parseable manner using the following alias:
+> 
+> ```alias finderr='python ~/path/to/parse_errors.py > ~/tmp/finderr.txt; less ~/tmp/finderr.txt'```
+
+
 # ℹ️ Job Information
 The SLURM job's comments contain the `rule` and `wildcard` information and can be accessed using `%.50k` in `squeue`:
 ```
